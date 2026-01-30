@@ -4,5 +4,15 @@ cam = Camera()
 
 cam.take_photo("image1.jpg")
 
+
+def accelerometerCalculation():
+    return 1000
+
+
 with open("result.txt", "w") as f:
-    f.write("100")
+    speed = accelerometerCalculation
+    speed = str(round(speed,5)) 
+    f.write(speed)
+
+
+
