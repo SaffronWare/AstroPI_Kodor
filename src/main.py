@@ -10,7 +10,7 @@ def accelerometerCalculation():
 
 
 with open("result.txt", "w") as f:
-    speed = accelerometerCalculation
+    speed = accelerometerCalculation()
     speed = str(round(speed,5)) 
     f.write(speed)
 
