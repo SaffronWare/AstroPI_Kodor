@@ -5,4 +5,4 @@ cam = Camera()
 cam.take_photo("image1.jpg")
 
 with open("result.txt", "w") as f:
-    f.write(100)
+    f.write("100")
