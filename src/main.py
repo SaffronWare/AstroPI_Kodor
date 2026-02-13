@@ -1,32 +1,47 @@
-from picamzero import Camera
-import time
+## Import the Camera class from the picamzero (picamera-zero) module
+# from picamzero import Camera
+#
+# # Create an instance of the Camera class
+# cam = Camera()
+#
+# cam.capture_sequence("sequence", num_images=3, interval=3)
+#
+# from astro_pi_orbit import ISS
+# from picamzero import Camera
+#
+# iss = ISS()
+#
+# def get_gps_coordinates(iss):
+#     """
+#     Returns a tuple of latitude and longitude coordinates expressed
+#     in signed degrees minutes seconds.
+#     """
+#     point = iss.coordinates()
+#     return (point.latitude.signed_dms(), point.longitude.signed_dms())
+#
+# cam = Camera()
+# cam.take_photo("gps_image1.jpg", gps_coordinates=get_gps_coordinates(iss))
 
-SAMPLE_RATE = 1 # per second
-TIME_STEP = 1/SAMPLE_RATE
-
-cam = Camera()
-
-def test():
-    picture_index = 0
-    frame_time = 0
-    start = time.monotonic()
-    last_frame_end = time.monotonic()
-    while time.monotonic() - start < 10:
-        cam.take_photo(f"picture{picture_index}_time:{time.monotonic()-start}")
-        picture_index += 1
-        frame_time = time.monotonic()- last_frame_end
-        if frame_time < TIME_STEP:
-            # time.sleep(TIME_STEP - frame_time)
-            pass # for now imma just take pics as quickly as possible
-        last_frame_end = time.monotonic()
-    
-    return 100 # random exmample
 
 
 
-with open("result.txt", "w") as f:
-    speed = test()
-    f.write(str(round(speed,5)))
+# EXAMPLE OF WRITING TO results.txt -------------------------------------
+# estimate_kmps = 7.1234567890  # Replace with your estimate
+#
+# # Format the estimate_kmps to have a precision
+# # of 5 significant figures
+# estimate_kmps_formatted = "{:.4f}".format(estimate_kmps)
+#
+# # Create a string to write to the file
+# output_string = estimate_kmps_formatted
+#
+# # Write to the file
+# file_path = "result.txt"  # Replace with your desired file path
+# with open(file_path, 'w') as file:
+#     file.write(output_string)
+#
+# print("Data written to", file_path)
+
 
 
 
